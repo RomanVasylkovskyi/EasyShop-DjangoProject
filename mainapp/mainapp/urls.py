@@ -23,4 +23,6 @@ urlpatterns = [
     path('', store_views.main_page, name='start'),
     path('admin/', admin.site.urls, name='admin'),
     path('main/', store_views.main_page, name='main'),
+    path('login/', store_views.login_page, name='login'),
+    path('register/', store_views.register_page, name='register'),
 ]

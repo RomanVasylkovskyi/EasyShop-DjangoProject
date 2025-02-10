@@ -1,0 +1,62 @@
+.main-header {
+    background-color: #886750;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    position:fixed;
+    top: 0;
+    left: 0;
+    animation: slideDown 0.6s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.main-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main-header nav ul li {
+    display: inline;
+    transition: transform 0.3s ease;
+}
+
+.main-header nav ul li:hover {
+    transform: scale(1.1);
+}
+
+.main-header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.main-header nav ul li a:hover {
+    color: #cab08f;
+}
+
+.footer {
+    background-color: #886750;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    margin-top: auto;
+    position:absolute;
+    bottom: 0;
+}

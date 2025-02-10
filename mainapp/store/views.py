@@ -6,3 +6,9 @@ from django.contrib import messages
 
 def main_page(request):
     return render(request, 'store/template/main_page.html')
+
+def login_page(request):
+    return render(request, 'store/template/login.html')
+
+def register_page(request):
+    return render(request, 'store/template/register.html')

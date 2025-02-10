@@ -1,0 +1,28 @@
+{% extends "store/template/layout.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block headcode %}
+    <link rel="icon" href="{% static 'img/people.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="register-container">
+    <h2>Sign up</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="register-btn">Sign up</button>
+        <p class="login-link">Have an account? <a href="{% url 'login' %}">Login</a></p>
+    </form>
+</div>
+{% endblock %}
