@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Category, Product
+from .models import Product
 from .forms import ProductForm
 
 def product_list(request):
@@ -18,10 +18,8 @@ def create_product(request):
             return redirect('product_list')
     else:
         form = ProductForm()
-
-    categories = Category.objects.all()
-    return render(request, 'store/create.html', {'form': form, 'categories': categories})
-
+    
+    return render(request, 'store/create.html', {'form': form})
 
 def product_update(request, pk):
     product = get_object_or_404(Product, pk=pk)
@@ -32,11 +30,13 @@ def product_update(request, pk):
             return redirect('product_list')
     else:
         form = ProductForm(instance=product)
-    return render(request, 'store/product_form.html', {'form': form})
+
+    return render(request, 'store/product_form.html', {'form': form, 'product': product})
 
 def product_delete(request, pk):
     product = get_object_or_404(Product, pk=pk)
     if request.method == 'POST':
         product.delete()
         return redirect('product_list')
+    
     return render(request, 'store/product_confirm_delete.html', {'product': product})

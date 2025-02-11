@@ -1,6 +1,6 @@
 {% block content %}
     <h2>Список товарів</h2>
-    <a href="{% url 'product_create' %}">Додати новий товар</a>
+    <a href="{% url 'create_product' %}" class="btn btn-primary">Створити новий продукт</a> 
     <ul>
         {% for product in products %}
             <li>
