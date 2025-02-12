@@ -1,6 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product
 from .forms import ProductForm
+from django.contrib import messages
+
+def main_page(request):
+    return render(request, 'store/template/main_page.html')
 
 def product_list(request):
     products = Product.objects.all()

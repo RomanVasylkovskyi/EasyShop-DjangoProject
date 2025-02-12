@@ -1,8 +1,10 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+import store.views as store_views
 
 urlpatterns = [
-    path('', include('store.urls')),  
-    path('admin/', admin.site.urls),
-    path('store/', include('store.urls')),
+
+    path('', store_views.main_page, name='start'),
+    path('admin/', admin.site.urls, name='admin'),
+    path('main/', store_views.main_page, name='main'),
 ]
