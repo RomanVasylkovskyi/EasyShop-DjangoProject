@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% block headcode %}
     {% endblock %}
     <title>
@@ -11,7 +12,14 @@
     </title>
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+    <div id="header">
+        {% include "header.html" %}
+    </div>
+    <div id="content">
+        {% block content %}{% endblock %} 
+    </div>
+    <div id="footer">
+    {% include "footer.html" %}
+    </div>
 </body>
 </html>
