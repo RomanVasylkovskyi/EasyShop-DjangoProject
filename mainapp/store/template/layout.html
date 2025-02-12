@@ -12,9 +12,14 @@
     </title>
 </head>
 <body>
-    {% include "store/template/header.html" %}
-    {% block content %}
-    {% endblock %}
-    {% include "store/template/footer.html" %}
+    <div id="header">
+        {% include "store/template/header.html" %}
+    </div>
+    <div id="content">
+        {% block content %}{% endblock %} 
+    </div>
+    <div id="footer">
+    {% include "store/template/footer.html" %}        
+    </div>
 </body>
 </html>
