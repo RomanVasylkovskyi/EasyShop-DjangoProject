@@ -4,13 +4,13 @@ from .forms import ProductForm
 from django.contrib import messages
 
 def main_page(request):
-    return render(request, 'store/main_page.html')
+    return render(request, 'main_page.html')
 
 def login_page(request):
-    return render(request, 'store/login.html')
+    return render(request, 'login.html')
 
 def register_page(request):
-    return render(request, 'store/register.html')
+    return render(request, 'register.html')
 
 
 def product_list(request):
