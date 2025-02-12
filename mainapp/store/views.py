@@ -4,7 +4,7 @@ from .forms import ProductForm
 from django.contrib import messages
 
 def main_page(request):
-    return render(request, 'store/template/main_page.html')
+    return render(request, 'main_page.html')
 
 def product_list(request):
     products = Product.objects.all()
