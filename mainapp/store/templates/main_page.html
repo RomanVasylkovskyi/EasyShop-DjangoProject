@@ -5,9 +5,57 @@
 
 {% block headcode %}
     <link rel="icon" href="{% static 'img/people.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/main_page.css' %}">
 {% endblock %}
 
 {% block content %}
-
-
+    <section class="content">
+        <aside class="sidebar">
+            <h2>Художні</h2>
+            <ul>
+                <li><a href="#">Сучасні автори</a></li>
+                <li><a href="#">Романтична проза</a></li>
+                <li><a href="#">Історична та пригодницька проза</a></li>
+                <li><a href="#">Детективи</a></li>
+                <li><a href="#">Трилери та жахи</a></li>
+                <li><a href="#">Фантастика</a></li>
+                <li><a href="#">Фентезі</a></li>
+                <li><a href="#">Класична література</a></li>
+                <li><a href="#">Комікси та манґи</a></li>
+            </ul>
+            <h2>Прикладні</h2>
+            <ul>
+                <li><a href="#">Історія, факти та біографії</a></li>
+                <li><a href="#">Психологія</a></li>
+                <li><a href="#">Саморозвиток</a></li>
+                <li><a href="#">Бізнес-література</a></li>
+                <li><a href="#">Дозвілля та Хобі</a></li>
+                <li><a href="#">Наукпоп</a></li>
+                <li><a href="#">Езотерика, таро</a></li>
+            </ul>
+            <h2>Дитячі</h2>
+            <ul>
+                <li><a href="#">Дітям до 4-х років</a></li>
+                <li><a href="#">Дітям 4-6 років</a></li>
+                <li><a href="#">Дітям 7-12 років</a></li>
+                <li><a href="#">Дітям від 12 років</a></li>
+                <li><a href="#">Шкільна та Навчальна</a></li>
+                <li><a href="#">Розвиваючі книги</a></li>
+                <li><a href="#">Казки і повісті</a></li>
+            </ul>
+        </aside>
+        <section class="main-content">
+            <div class="feature-box">
+                <h3>Клієнтам КСД</h3>
+                <div class="feature-item">
+                    <img src="{% static 'img/coins.png' %}" alt="КСДкоїни">
+                    <p>Збирайте віртуальні монети за кожне замовлення у КСД і обмінюйте на бонуси.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="{% static 'img/bonus.png' %}" alt="Бонуси">
+                    <p>Додаткова знижка на наступні покупки, читайте більше і заощаджуйте.</p>
+                </div>
+            </div>
+        </section>
+    </section>
 {% endblock %}

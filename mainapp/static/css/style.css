@@ -1,25 +1,20 @@
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    flex-direction: column;
-    background-color: #e1d9ce;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     margin: 0;
+    background-image: url("../img/BACKGROUND.webp");
+    font-family: 'Poppins', sans-serif;
+    color: #222;
 }
+
 #header {
     grid-row: 1;
+    width: 100%;
 }
 
 #content {
     grid-row: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,11 +28,11 @@ body {
 }
 
 .main-header {
-    background-color: #886750;
+    background-color: #111;
     padding: 15px;
     text-align: center;
     width: 100%;
-    position:fixed;
+    position: fixed;
     top: 0;
     left: 0;
     animation: slideDown 0.6s ease-in-out;
@@ -80,14 +75,14 @@ body {
 }
 
 .main-header nav ul li a:hover {
-    color: #cab08f;
+    color: #888;
 }
 
 .footer {
-    background-color: #886750;
+    background-color: #111;
     color: white;
     text-align: center;
     padding: 15px;
     margin-top: auto;
-    position:relative;
+    position: relative;
 }
