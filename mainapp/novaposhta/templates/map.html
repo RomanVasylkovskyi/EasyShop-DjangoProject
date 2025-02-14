@@ -1,0 +1,28 @@
+<!-- templates/postomats/map.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Поштомати Нова Пошта</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=ВАШ_GOOGLE_MAPS_API_КЛЮЧ"></script>
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: {lat: 50.4501, lng: 30.5234} // Координати Києва
+            });
+
+            {% for postomat in postomats %}
+                new google.maps.Marker({
+                    position: {lat: {{ postomat.latitude }}, lng: {{ postomat.longitude }}},
+                    map: map,
+                    title: '{{ postomat.name }}'
+                });
+            {% endfor %}
+        }
+    </script>
+</head>
+<body onload="initMap()">
+    <h1>Поштомати Нова Пошта</h1>
+    <div id="map" style="height: 600px; width: 100%;"></div>
+</body>
+</html>

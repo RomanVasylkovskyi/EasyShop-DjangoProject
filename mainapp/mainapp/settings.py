@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,6 +44,7 @@ INSTALLED_APPS = [
     'mainapp',
     'core',
     'store',
+    'novaposhta',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +67,7 @@ TEMPLATES = [
             BASE_DIR / 'mainapp/templates',
             BASE_DIR / 'store/templates',
             BASE_DIR / 'user/templates',
+            BASE_DIR / 'novaposhta/templates',
             BASE_DIR / 'mainapp', 'templates',
         ],
         'APP_DIRS': True,
