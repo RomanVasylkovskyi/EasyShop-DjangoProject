@@ -48,6 +48,7 @@ a {
 
 .main-content {
     flex-grow: 1;
+    width: 50%;
 }
 
 .feature-box {
@@ -61,14 +62,112 @@ a {
     margin-bottom: 15px;
 }
 
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.feature-item img {
-    width: 50px;
-    height: 50px;
+.slider {
+  width: 900px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  width: 400%;
+  transition: transform 0.5s ease-out;
+}
+
+/* Окремий слайд */
+.slide {
+  height: 350px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; /* Простір між карточками */
+  padding: 20px 50px;
+  box-sizing: border-box;
+}
+
+/* Стилі для карточок товарів */
+.card {
+  height: 100%;
+  background: #333;
+  border: 0px solid #888;
+  border-radius: 5px;
+  padding: 20px;
+  flex: 1 1 calc((100% - 40px) / 3);
+  max-width: calc((100% - 40px) / 3);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  box-sizing: border-box;
+  transition: color 0.8s ease;
+}
+
+.card:hover{
+  border: 1px solid #888;
+  cursor: pointer;
+}
+
+/* Кнопки навігації */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  font-size: 50px;
+  cursor: pointer;
+  z-index: 10;
+  color: #666;
+  visibility:visible;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  color: #000;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .slider {
+    width: 100%;
+  }
+  .slide {
+    gap: 10px;
+    padding: 10px;
+  }
+  .card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+.card img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  border-radius: 4px;
 }
