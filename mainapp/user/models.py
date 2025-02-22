@@ -1,3 +1,4 @@
+from django.contrib.auth.management.commands.changepassword import UserModel
 from django.db import models
 from django.core.validators import MinLengthValidator
 
