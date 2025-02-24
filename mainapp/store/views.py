@@ -6,8 +6,6 @@ from django.contrib import messages
 def main_page(request):
     return render(request, 'main_page.html')
 
-
-
 def product_list(request):
     products = Product.objects.all()
     return render(request, 'store/product_list.html', {'products': products})

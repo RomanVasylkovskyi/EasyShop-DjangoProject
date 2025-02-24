@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block headcode %}
+    <link rel="icon" href="{% static 'img/people.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="register-container">
+    {% csrf_token %}
+        {{ form.as_p }}
+    <h2>Sign up</h2>
+</div>
+{% endblock %}

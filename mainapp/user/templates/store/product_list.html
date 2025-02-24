@@ -1,0 +1,13 @@
+{% block content %}
+    <h2>Список товарів</h2>
+    <a href="{% url 'create_product' %}" class="btn btn-primary">Створити новий продукт</a> 
+    <ul>
+        {% for product in products %}
+            <li>
+                <a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a> - ${{ product.price }}
+                <a href="{% url 'product_update' product.pk %}">Редагувати</a>
+                <a href="{% url 'product_delete' product.pk %}">Видалити</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
