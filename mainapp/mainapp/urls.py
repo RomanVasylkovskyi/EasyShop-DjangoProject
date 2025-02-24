@@ -19,11 +19,10 @@ from django.urls import path, include
 import store.views as store_views
 
 urlpatterns = [
-
-    path('', store_views.main_page, name='start'),
+    path('', store_views.main_page, name='main'),
     path('admin/', admin.site.urls, name='admin'),
-    path('main/', store_views.main_page, name='main'),
-    path('login/', store_views.login_page, name='login'),
-    path('register/', store_views.register_page, name='register'),
     path('store/', include('store.urls')),
+    path('user/', include('user.urls')),
+    # path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    # path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

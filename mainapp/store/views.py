@@ -6,11 +6,6 @@ from django.contrib import messages
 def main_page(request):
     return render(request, 'main_page.html')
 
-def login_page(request):
-    return render(request, 'login.html')
-
-def register_page(request):
-    return render(request, 'register.html')
 
 
 def product_list(request):

@@ -1,0 +1,17 @@
+{% load static %}
+<header class="main-header">
+    <nav>
+        <ul>
+            <li><a href="{% url 'main' %}">Home</a></li>
+            <li><a href="#">About</a></li>
+            {% comment %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Sign up</a></li>
+            {% endcomment %}
+
+        </ul>
+    </nav>
+    <div class="logo-container">
+        <a href="{% url 'profile'%}"><img src="{% static 'img/people.png'%}" alt="User"></a>
+    </div>
+</header>
