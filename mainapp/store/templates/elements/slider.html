@@ -1,12 +1,14 @@
 {% load static %}
 
-<div class="wrapper">
+<link rel="stylesheet" href="{% static 'css/slider.css' %}">
+
+<div class="wrapper" id="{{ slider_id }}">
     <div class="slider">
       <div class="slides">
         <div class="slide">
           <div class="card">
             <img src="{% static 'img/noimages.png' %}" alt="Зображення товару">
-            <h3>Товар </h3>
+            <h3>Товар</h3>
             <p>Опис товару 00$</p>
           </div>
           <div class="card">
@@ -68,6 +70,40 @@
           <div class="card">
             <img src="{% static 'img/noimages.png' %}" alt="Зображення товару">
             <h3>Товар </h3>
+            <p>Опис товару 00$</p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="card">
+            <img src="{% static 'img/noimages.png' %}" alt="Зображення товару">
+            <h3>Товар </h3>
+            <p>Опис товару 00$</p>
+          </div>
+          <div class="card">
+            <img src="{% static 'img/noimages.png' %}" alt="Зображення товару">
+            <h3>Товар </h3>
+            <p>Опис товару 00$</p>
+          </div>
+          <div class="card">
+            <img src="{% static 'img/noimages.png' %}" alt="Зображення товару">
+            <h3>Товар </h3>
+            <p>Опис товару 00$</p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="card">
+            <img src="{% static 'img/noimages.png' %}" alt="Зображення товару">
+            <h3>Товар </h3>
+            <p>Опис товару 00$</p>
+          </div>
+          <div class="card">
+            <img src="{% static 'img/noimages.png' %}" alt="Зображення товару">
+            <h3>Товар </h3>
+            <p>Опис товару 00$</p>
+          </div>
+          <div class="card">
+            <img src="{% static 'img/noimages.png' %}" alt="Зображення товару">
+            <h3>Товар</h3>
             <p>Опис товару 00$</p>
           </div>
         </div>

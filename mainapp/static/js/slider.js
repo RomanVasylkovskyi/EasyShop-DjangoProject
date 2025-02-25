@@ -1,63 +1,77 @@
-let index = 0;
-const slides = document.querySelector(".slides");
-const totalSlides = document.querySelectorAll(".slide").length;
-let autoSlideInterval;
-let resumeTimeout;
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
+function initializeSlider(sliderId) {
+  let index = 1; // Починаємо з 1, оскільки перший слайд - це копія останнього
+  const slider = document.querySelector(`#${sliderId}`);
+  const slides = slider.querySelector(".slides");
+  const slide = slider.querySelectorAll(".slide");
+  const totalSlides = slide.length;
+  const prevButton = slider.querySelector('.prev');
+  const nextButton = slider.querySelector('.next');
+  let autoSlideInterval;
+  let resumeTimeout;
 
-function updateSlide() {
-  slides.style.transform = `translateX(-${index * 25}%)`;
-}
+  // Встановлюємо початкову позицію
+  slides.style.transform = `translateX(-${index * 100}%)`;
 
-function startAutoSlide() {
-  autoSlideInterval = setInterval(() => {
-    index = (index + 1) % totalSlides;
+  function updateSlide() {
+    slides.style.transition = 'transform 0.5s ease-in-out';
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      index++;
+      updateSlide();
+      handleSeamlessTransition();
+    }, 3000);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+  }
+
+  function resetAutoSlide() {
+    stopAutoSlide();
+    clearTimeout(resumeTimeout);
+    resumeTimeout = setTimeout(() => {
+      startAutoSlide();
+    }, 5000);
+  }
+
+  function handleSeamlessTransition() {
+    if (index >= totalSlides - 1) {
+      setTimeout(() => {
+        slides.style.transition = 'none';
+        index = 1;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+      }, 500);
+    } else if (index <= 0) {
+      setTimeout(() => {
+        slides.style.transition = 'none';
+        index = totalSlides - 2;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+      }, 500);
+    }
+  }
+
+  prevButton.addEventListener("click", () => {
+    index--;
     updateSlide();
-  }, 3000); // змінювати слайд кожні 3 секунди
+    handleSeamlessTransition();
+    resetAutoSlide();
+  });
+
+  nextButton.addEventListener("click", () => {
+    index++;
+    updateSlide();
+    handleSeamlessTransition();
+    resetAutoSlide();
+  });
+
+  startAutoSlide();
 }
 
-function stopAutoSlide() {
-  clearInterval(autoSlideInterval);
-}
-
-// Функція для зупинки автоперемикання та відновлення його через 5 секунд бездіяльності
-function resetAutoSlide() {
-  stopAutoSlide();
-  clearTimeout(resumeTimeout);
-  resumeTimeout = setTimeout(() => {
-    startAutoSlide();
-  }, 5000); // 5 секунд затримки перед відновленням автоперемикання
-}
-
-document.querySelector(".prev").addEventListener("click", () => {
-  index = (index - 1 + totalSlides) % totalSlides;
-  updateSlide();
-  resetAutoSlide();
-  updateNavigation()
+document.addEventListener('DOMContentLoaded', () => {
+  initializeSlider('slider1');
+  initializeSlider('slider2');
 });
 
-document.querySelector(".next").addEventListener("click", () => {
-  index = (index + 1) % totalSlides;
-  updateSlide();
-  resetAutoSlide();
-  updateNavigation()
-});
-
-function updateNavigation() {
-  if (index === 0) {
-    prevButton.style.visibility = 'hidden';
-  } else {
-    prevButton.style.visibility = 'visible';
-  }
-  // Якщо останній слайд — приховуємо кнопку "next"
-  if (index === totalSlides - 1) {
-    nextButton.style.visibility = 'hidden';
-  } else {
-    nextButton.style.visibility = 'visible';
-  }
-}
-
-
-// Запуск автоперемикання при завантаженні сторінки
-startAutoSlide();
