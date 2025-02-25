@@ -7,6 +7,9 @@ from .form import UserForm
 def profile_page(request):
     return render(request, 'profile.html')
 
+def store_page(request):
+    return render(request, 'store.html')
+
 
 def login_page(request):
     return render(request, 'login.html')
