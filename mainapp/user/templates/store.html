@@ -5,7 +5,7 @@
 
 {% block headcode %}
     <link rel="icon" href="{% static 'img/people.png' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'css/main_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/store_page.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -46,9 +46,12 @@
         </aside>
         <section class="main-content">
             <div class="feature-box">
-              <h1>Новинки</h1>
-              {% include 'elements/slider.html'%}                
+                <section class="product-store">
+                    {% include 'elements/product-card.html'%}
+                </section> 
             </div>
         </section>
     </section>
+
+    <script src="{% static 'js/slider.js' %}"></script>
 {% endblock %}
