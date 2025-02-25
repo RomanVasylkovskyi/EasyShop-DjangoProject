@@ -47,11 +47,25 @@
         <section class="main-content">
             <div class="feature-box">
                 <section class="product-store">
+                    <div class="card-menu">
+                        <div class="sort-buttons">
+                            <p>Показувати:</p>
+                            <button>20</button>
+                            <button>50</button>
+                            <button>100</button>
+                        </div>
+                        <div class="sort-buttons">
+                            <p>Сортувати за:</p>
+                            <button>Датою</button>
+                            <button>Популярністю</button>
+                            <button>Ціною</button>
+                        </div>
+                    </div>
                     {% include 'elements/product-card.html'%}
                 </section> 
             </div>
         </section>
     </section>
 
-    <script src="{% static 'js/slider.js' %}"></script>
+    <script src="{% static 'js/user-store.js' %}"></script>
 {% endblock %}

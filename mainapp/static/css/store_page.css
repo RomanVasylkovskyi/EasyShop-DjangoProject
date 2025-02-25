@@ -55,7 +55,7 @@ a {
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
-    width: 750px;
+    width: 800px;
 }
 
 .feature-box h3 {
@@ -118,6 +118,39 @@ a {
     border: solid 1px #888;
     cursor: pointer;
 }
+
+.card-menu{
+    display: flex;
+    flex-direction: row;
+}
+
+.sort-buttons{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding: 10px;
+    margin: 0px;
+}
+.sort-buttons button{
+    margin: 10px;
+    min-width: 50px;
+    background-color: #fff;
+    padding: 5px;
+    border: solid 1px #fff;
+    border-radius: 5px;
+    transition: color 0.3s ease;
+}
+.sort-buttons button:hover{
+    background-color: #888;
+    border: solid 1px #888;
+    cursor: pointer;
+}
+.sort-buttons button.active {
+    background-color: #888;
+    border: solid 1px #888;
+    color: #fff;
+}
+
 
 @media (max-width: 768px) {
 }
