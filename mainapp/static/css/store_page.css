@@ -151,6 +151,34 @@ a {
     color: #fff;
 }
 
+.visible-buttons{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding: 10px;
+    margin: 0px;
+}
+.visible-buttons button{
+    margin: 10px;
+    min-width: 50px;
+    background-color: #fff;
+    padding: 5px;
+    border: solid 1px #fff;
+    border-radius: 5px;
+    transition: color 0.3s ease;
+}
+.visible-buttons button:hover{
+    background-color: #888;
+    border: solid 1px #888;
+    cursor: pointer;
+}
+.visible-buttons button.active {
+    background-color: #888;
+    border: solid 1px #888;
+    color: #fff;
+}
+
+
 
 @media (max-width: 768px) {
 }
