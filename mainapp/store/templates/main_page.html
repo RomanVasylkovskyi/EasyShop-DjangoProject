@@ -47,8 +47,10 @@
         <section class="main-content">
             <div class="feature-box">
               <h1>Новинки</h1>
-              {% include 'elements/slider.html'%}                
+              {% include 'elements/slider.html' with slider_id='slider1' %}
+              <h1>Популярне</h1>
+              {% include 'elements/slider.html' with slider_id='slider2' %}
             </div>
-        </section>
+        </section>          
     </section>
 {% endblock %}
