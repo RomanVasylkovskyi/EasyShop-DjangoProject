@@ -1,0 +1,116 @@
+body{
+    background-color: #222;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+h2 {
+    color: #fff;
+    border-bottom: 2px solid #666;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.product-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Додано для вирівнювання елементів по краях */
+    background: #222;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+
+.product-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    object-fit: cover;
+    background: #333;
+}
+
+.product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin-left: 10px; /* Відступ між зображенням і інформацією */
+}
+
+.product-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+.product-price {
+    color: #bbb;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn.edit {
+    background-color: #666;
+    color: #fff;
+}
+
+.btn.edit:hover {
+    background-color: #888;
+}
+
+.btn.delete {
+    background-color: #900;
+    color: #fff;
+}
+
+.btn.delete:hover {
+    background-color: #b00;
+}
+
+.btn.create {
+    display: inline-block;
+    background-color: #008000;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.btn.create:hover {
+    background-color: #00a000;
+}
