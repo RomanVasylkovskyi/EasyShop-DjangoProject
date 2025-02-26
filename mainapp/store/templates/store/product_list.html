@@ -9,16 +9,21 @@
     <h2>Список товарів</h2>
     <ul>
         {% for product in products %}
-            <li>
-                <span class="product-name">{{ product.name }}</span>
-                <span class="product-price">${{ product.price }}</span>
-                <div class="actions">
-                    <a href="{% url 'product_update' product.pk %}" class="btn">Редагувати</a>
-                    <a href="{% url 'product_delete' product.pk %}" class="btn">Видалити</a>
+            <div class="product-card">
+                <img src="{% static 'img/noimages.png'%}" alt="Зображення" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">{{ product.name }}</h3>
+                    <p class="product-price">${{ product.price }}</p>
+                    <div class="actions">
+                        <button class="btn edit"><a href="{% url 'product_update' product.pk %}" >Редагувати</a></button>
+                        <button class="btn delete"><a href="{% url 'product_delete' product.pk %}" >Видалити</a></button>
+                    </div>
                 </div>
-            </li>
+            </div>
         {% endfor %}
     </ul>
-    <a href="{% url 'create_product' %}" class="btn">Створити новий продукт</a>
+    <button class="btn create">
+        <a href="{% url 'create_product' %}" class="btn">Створити новий продукт</a>
+    </button>
 </div>
 {% endblock %}
