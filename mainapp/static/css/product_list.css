@@ -4,6 +4,9 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
 }
 h2 {
     color: #fff;
@@ -13,7 +16,7 @@ h2 {
 }
 .container {
     max-width: 800px;
-    margin: 10px;
+    width: 100%;
     background: #111;
     padding: 20px;
     border-radius: 10px;

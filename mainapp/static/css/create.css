@@ -14,8 +14,10 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
-    width: 400px;
+    width: 700px; /* Збільшена ширина */
+    max-width: 100%;
     text-align: center;
+    overflow: hidden;
 }
 .card h2 {
     color: #fff;
@@ -23,9 +25,16 @@ body {
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
+.form-container {
+    display: flex;
+    gap: 20px;
+}
+.left-column, .right-column {
+    width: 50%;
+    text-align: left;
+}
 .form-group {
     margin-bottom: 15px;
-    text-align: left;
 }
 label {
     font-weight: bold;
@@ -33,13 +42,18 @@ label {
     margin-bottom: 5px;
 }
 input, textarea, select {
-    width: calc(100% - 20px);
+    width: 100%;
+    box-sizing: border-box;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #444;
     background: #222;
     color: #fff;
-    margin-bottom: 10px; /* Add margin between fields */
+}
+textarea {
+    resize: vertical;
+    min-height: 40px;
+    max-height: 120px;
 }
 button {
     background-color: #666;
@@ -51,6 +65,7 @@ button {
     cursor: pointer;
     font-size: 16px;
     width: 100%;
+    margin-top: 20px;
 }
 button:hover {
     background-color: #888;
