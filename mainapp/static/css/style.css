@@ -1,0 +1,118 @@
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    margin: 0;
+    background-image: url("../img/BACKGROUND.webp");
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+}
+
+#header {
+    grid-row: 1;
+    width: 100%;
+}
+
+a img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#content {
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px 20px;
+    min-height: calc(100vh - 130px);
+}
+
+#footer {
+    grid-row: 3;
+    width: 100%;
+}
+
+.main-header {
+    background-color: #111;
+    padding: 13px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    animation: slideDown 0.6s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-header nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.main-header .logo-container img {
+    max-width: 25px;
+    background-color: #fff;
+    border: solid 1px #fff;
+    border-radius: 50%;
+}
+
+
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.main-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main-header nav ul li {
+    transition: transform 0.3s ease;
+}
+
+.main-header nav ul li:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.main-header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.main-header nav ul li a:hover {
+    color: #888;
+}
+
+.footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+    position: relative;
+}

@@ -1,0 +1,29 @@
+{% extends "store/admin_loyaut.html" %}
+{% load static %}
+
+{% block headcode%}
+    <link rel="stylesheet" href="{% static 'css/product_list.css' %}">
+{% endblock%}
+{% block content %}
+<div class="container">
+    <h2>Список товарів</h2>
+    <ul>
+        {% for product in products %}
+            <div class="product-card">
+                <img src="{% static 'img/noimages.png'%}" alt="Зображення" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">{{ product.name }}</h3>
+                    <p class="product-price">${{ product.price }}</p>
+                    <div class="actions">
+                        <button class="btn edit"><a href="{% url 'product_update' product.pk %}" >Редагувати</a></button>
+                        <button class="btn delete"><a href="{% url 'product_delete' product.pk %}" >Видалити</a></button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </ul>
+    <button class="btn create">
+        <a href="{% url 'create_product' %}" class="btn">Створити новий продукт</a>
+    </button>
+</div>
+{% endblock %}
